@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import argparse
 import sys
+from time import sleep
 import yaml
 import logging
 from TikTokAPI import TikTokAPI
@@ -77,6 +78,8 @@ if __name__ == '__main__':
             for video in videos:
                 logger.info('Downloading video: {}'.format(video))
                 try:
+                    # Sleep for 5 seconds between requests to go easy on the website
+                    sleep(5)
                     tt.download_video(video, args.outdir)
                 except Exception as e:
                     print(e)
@@ -96,6 +99,8 @@ if __name__ == '__main__':
                     for video in account_videos['items']:
                         logger.info('Downloading video: {}'.format(video['desc']))
                         try:
+                            # Sleep for 5 seconds between requests to go easy on the website
+                            sleep(5)
                             tt.download_video(video['id'], args.outdir)
                         except Exception as e:
                             print(e)
