@@ -4,7 +4,6 @@ import sys
 import yaml
 import logging
 from TikTokAPI import TikTokAPI
-from pprint import pprint
 
 # Disable logging for `pyppeteer` unless WARNING
 pyppeteer_logger = logging.getLogger('pyppeteer')
